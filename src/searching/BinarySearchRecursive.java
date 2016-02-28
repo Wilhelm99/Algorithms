@@ -11,10 +11,10 @@ public class BinarySearchRecursive
 		else if(array[mid] == key)		//Fall: gefunden, Index wird zurückgeliefert
 			return mid;
 		
-		else if(key < array[mid])		//Fall: Wert liegt in der größeren Hälfte, start wird verschoben und die Methode mit dem neuen Wert aufgerufen
+		else if(key < array[mid])		//Fall: Wert liegt in der kleineren Hälfte, start wird verschoben und die Methode mit dem neuen Wert aufgerufen
 			return search(array, key, start, mid-1);
 		
-		else if(key > array[mid])		//Fall: Wert liegt in der kleineren Hälfte, end wird verschoben und die Methode mit dem neuen Wert aufgerufen
+		else if(key > array[mid])		//Fall: Wert liegt in der größeren Hälfte, end wird verschoben und die Methode mit dem neuen Wert aufgerufen
 			return search(array, key, mid+1, end);
 		
 		return -1;	//Fehler-Rückgabewert, nicht gefunden
