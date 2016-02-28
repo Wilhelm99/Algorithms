@@ -24,14 +24,18 @@ public class QuickSort
 				hiIndex--;
 			}
 		}
-		Common.swap(hiIndex, pivot, array);
+		if(hiIndex != 0)	//das Pivotelement wird an die richtige Stelle getauscht, sofern der Bereich mit kleineren Elementen existiert
+		{
+			Common.swap(hiIndex, pivot, array);
+			return hiIndex;	//Rückgabe der jetzigen Stelle des Pivotelementes
+		}
 		
-		return hiIndex;
+		return pivot;
 	}
 	
 	private static void sort(int start, int end, int[] array)
 	{
-		if(end <= start)	//Rekursionsende, falls end start unterschreitet
+		if(end <= start)	//Rekursionsende, falls das Intervall nur noch 1 oder weniger Elemente enthält
 			return;
 		
 		int pivot = partition(start, end, array);	//Anfangswert für Pivot
