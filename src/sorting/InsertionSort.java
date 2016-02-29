@@ -1,17 +1,18 @@
 package sorting;
 
-import lib.Common;
-
 public class InsertionSort
 {
 	public static void sort(int[] array)
 	{
-		for(int i = 0; i < array.length; i++)	//äußere Schleife für jedes Element des Arrays
+		int i, j, temp;
+		for(i = 1; i < array.length; i++)	//äußere Schleife für jedes Element des Arrays
 		{
-			for(int j = i; j > 0 && array[j-1] > array[j]; j--)	//tauscht das Element so lange nach vorne, bis es kein größeres mehr gibt
+			temp = array[i];	//speichert den später einzufügenden Wert
+			for(j = i-1; j >= 0 && array[j] > temp; j--)	//verschiebt die Elemente so lange nach vorne, bis es kein Größeres mehr gibt
 			{
-				Common.swap(j, j-1, array);
+				array[j+1] = array[j]; 	//schiebt die Elemente auf
 			}
+			array[j+1] = temp;	//setzt den Wert an der richtigen Stelle ein
 		}
 	}
 }

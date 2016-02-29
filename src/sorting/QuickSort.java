@@ -14,6 +14,7 @@ public class QuickSort
 		{
 			while(loIndex <= hiIndex && array[loIndex] < array[pivot])	//sucht so lange weiter, bis ein kleinerer Wert gefunden wurde
 				loIndex++;
+			
 			while(loIndex <= hiIndex && array[hiIndex] > array[pivot])	//sucht so lange weiter, bis ein größerer Wert gefunden wurde
 				hiIndex--;
 			
