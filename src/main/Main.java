@@ -4,6 +4,7 @@ import lib.Common;
 import searching.*;
 import sorting.*;
 
+@SuppressWarnings("unused")
 public class Main
 {
 	public static void main(String[] args)
@@ -15,7 +16,7 @@ public class Main
 		System.out.println("Binary Search test (1st iterative, 2nd recursive):");
 		//Hier testen
 		System.out.println(BinarySearch.search(bsArray, 42));
-		System.out.println(BinarySearchRecursive.search(bsArray, 88, 0, bsArray.length));
+		System.out.println(BinarySearchRecursive.search(bsArray, 88));
 		
 		//zufällig generiertes Test-Array zum sortieren
 		int[] sortingArray = Common.generateRandomArray(20, 101);
